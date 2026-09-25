@@ -1,5 +1,3 @@
-
-Blueprintsslice · JS
 import { createAsyncThunk, createSlice } from '@reduxjs/toolkit'
 import blueprintsService from '../../services/blueprintsService.js'
 
@@ -111,4 +109,3 @@ const slice = createSlice({
 
 export const { clearCurrent } = slice.actions
 export default slice.reducer
- 
