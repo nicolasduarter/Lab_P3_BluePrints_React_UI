@@ -16,40 +16,43 @@ export default function BlueprintForm({ onSubmit }) {
   }
 
   return (
-    <form onSubmit={handle} className="card">
-      <h3 style={{ marginTop: 0 }}>Crear Blueprint</h3>
-      <div className="grid cols-2">
-        <div>
-          <label>Autor</label>
-          <input
-            className="input"
-            value={author}
-            onChange={(e) => setAuthor(e.target.value)}
-            placeholder="juan.perez"
+      <form onSubmit={handle} className="card">
+        <h3 style={{ marginTop: 0 }}>Crear Blueprint</h3>
+        <div className="grid cols-2">
+          <div>
+            <label htmlFor="bp-author">Autor</label>
+            <input
+                id="bp-author"
+                className="input"
+                value={author}
+                onChange={(e) => setAuthor(e.target.value)}
+                placeholder="juan.perez"
+            />
+          </div>
+          <div>
+            <label htmlFor="bp-name">Nombre</label>
+            <input
+                id="bp-name"
+                className="input"
+                value={name}
+                onChange={(e) => setName(e.target.value)}
+                placeholder="mi-dibujo"
+            />
+          </div>
+        </div>
+        <div style={{ marginTop: 12 }}>
+          <label htmlFor="bp-points">Puntos (JSON)</label>
+          <textarea
+              id="bp-points"
+              className="input"
+              rows="5"
+              value={pointsJSON}
+              onChange={(e) => setPointsJSON(e.target.value)}
           />
         </div>
-        <div>
-          <label>Nombre</label>
-          <input
-            className="input"
-            value={name}
-            onChange={(e) => setName(e.target.value)}
-            placeholder="mi-dibujo"
-          />
+        <div style={{ marginTop: 12 }}>
+          <button className="btn primary">Guardar</button>
         </div>
-      </div>
-      <div style={{ marginTop: 12 }}>
-        <label>Puntos (JSON)</label>
-        <textarea
-          className="input"
-          rows="5"
-          value={pointsJSON}
-          onChange={(e) => setPointsJSON(e.target.value)}
-        />
-      </div>
-      <div style={{ marginTop: 12 }}>
-        <button className="btn primary">Guardar</button>
-      </div>
-    </form>
+      </form>
   )
 }

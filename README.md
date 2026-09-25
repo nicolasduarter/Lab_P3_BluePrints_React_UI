@@ -55,7 +55,7 @@ blueprints-react-lab/
 │  ├─ components/
 │  ├─ features/blueprints/blueprintsSlice.js
 │  ├─ pages/
-│  ├─ services/apiClient.js   # axios + interceptores JWT
+│  ├─ services/apiclient.js   # axios + interceptores JWT
 │  ├─ store/index.js          # Redux Toolkit
 │  ├─ App.jsx, main.jsx, styles.css
 ├─ tests/
