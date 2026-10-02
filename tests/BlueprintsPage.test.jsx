@@ -9,6 +9,11 @@ vi.mock('../src/features/blueprints/blueprintsSlice.js', () => ({
   fetchAuthors: () => ({ type: 'blueprints/fetchAuthors' }),
   fetchByAuthor: (author) => ({ type: 'blueprints/fetchByAuthor', payload: author }),
   fetchBlueprint: (payload) => ({ type: 'blueprints/fetchBlueprint', payload }),
+  createBlueprint: (payload) => ({ type: 'blueprints/createBlueprint', payload }),
+  updateBlueprint: (payload) => ({ type: 'blueprints/updateBlueprint', payload }),
+  deleteBlueprint: (payload) => ({ type: 'blueprints/deleteBlueprint', payload }),
+  pointAdded: (payload) => ({ type: 'blueprints/pointAdded', payload }),
+  blueprintUpdated: (payload) => ({ type: 'blueprints/blueprintUpdated', payload }),
 }))
 
 function makeStore(preloaded) {

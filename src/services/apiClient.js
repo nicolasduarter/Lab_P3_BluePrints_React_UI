@@ -50,6 +50,18 @@ const apiclient = {
         const res = await api.post('/api/v1/blueprints', payload)
         return unwrap(res)
     },
+    async update(author, name, points) {
+        const res = await api.put(
+            `/api/v1/blueprints/${encodeURIComponent(author)}/${encodeURIComponent(name)}`,
+            { points },
+        )
+        return unwrap(res)
+    },
+    async remove(author, name) {
+        await api.delete(
+            `/api/v1/blueprints/${encodeURIComponent(author)}/${encodeURIComponent(name)}`,
+        )
+    },
 }
 
 export default apiclient

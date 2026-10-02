@@ -49,6 +49,19 @@ const apimock = {
         MOCK_DATA.push(payload)
         return payload
     },
+    async update(author, name, points) {
+        await delay()
+        const bp = MOCK_DATA.find((b) => b.author === author && b.name === name)
+        if (!bp) throw new Error('Blueprint no encontrado')
+        bp.points = points
+        return bp
+    },
+    async remove(author, name) {
+        await delay()
+        const i = MOCK_DATA.findIndex((b) => b.author === author && b.name === name)
+        if (i === -1) throw new Error('Blueprint no encontrado')
+        MOCK_DATA.splice(i, 1)
+    },
 }
 
 export default apimock
